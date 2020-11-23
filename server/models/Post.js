@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const commentSchema = require('./Comment');
 const dateFormat = require('../utils/dateFormatter');
 
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 
 const postSchema = new Schema(
@@ -16,7 +16,7 @@ const postSchema = new Schema(
         postSheetUrl: {
             type: String,
             required: "Can't share without link! If stored locally, consider exporting to google drive and obtaining a link!",
-            minlength: 15,
+            minlength: 10,
             maxlength: 300
         },
         createdAt: {
@@ -37,6 +37,6 @@ const postSchema = new Schema(
     }
 );
 
-const Post = mongoose.model('Post', postSchema);
+const Post = model('Post', postSchema);
 
 module.exports = Post;

@@ -1,38 +1,153 @@
-.App {
-  text-align: center;
+/**MAIN**/
+:root {
+  
+  --tertiary: #eff0d1;
+  --quaternary: #ca9ce1;
+  --quinary: #f2befc;
+  --senary: #3a0f6c;
+  --octal: #09090b;
+  --nonary: #000000;
+
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/**GENERAL**/
+.bannerContainer {
+    background-color: var(--secondary)
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/**HEADER**/
+.navHeader {
+    color: var(--secondary);
+    border-bottom: solid;
+}
+#navbarRight {
+    display:flex;
+    flex-direction: right;
+    justify-content: flex-end;
+    font-family: 'Libre Baskerville', serif;
+    color: var(--octal);
+    font-size: 25px;
+    margin-bottom: 10px;
+    border-bottom: solid;
+}
+
+.nav a {
+    color: var(--secondary);
+    padding: 10px;
   }
+  
+.nav a:hover {
+    color: var(--quinary)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/**FOOTER**/
+.footerFormat {
+    color:var(--octal)
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/**LANDING**/
+.landingSection {
+    background-color: var(--secondary);
+    padding-left: 2%;
+    padding-right: 2%;
+    background-clip: margin-box; 
   }
-  to {
-    transform: rotate(360deg);
+
+  #landingContent {
+    background-color: var(--quinary);
   }
+
+  .bannerImage {
+    height: 30vh;
+    overflow: hidden;
+  }
+
+  .bannerlink {
+    width:100%;
+    position: relative;
+  }
+
+  .landingText {
+    font-family: 'Libre Baskerville', serif;
+    padding: 15px;
+    margin: 10px 30px;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-right: 2px solid;
+    border-left: 2px solid;
+  }
+/**HOME**/
+.postListContainer {
+    background-color: var(--quinary);
+}
+
+/**PROFILE**/
+
+/**POSTFORM**/
+.postButton {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-radius: 15px;
+}
+
+/**POSTLIST**/
+.postCard {
+    background-color: var(--senary);
+    padding: 10px
+}
+
+.postTop {
+    background-color: var(--quaternary);
+    border-top: 0;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.postBottom {
+    background-color: var(--quinary)
+}
+
+/**COMMENTLIST**/
+.commentText {
+    border-bottom: solid;
+}
+.commentCard {
+    background-color: var(--senary)
+}
+
+.commentTop {
+    background-color: var(--quaternary);
+    border-top: 0;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    color: var(--octal);
+}
+
+.commentBottom {
+    background-color: var(--quinary);
+    padding: 10px;
+    margin: 10px;
+}
+
+/**COMMENTFORM**/
+
+
+.commentButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-radius: 15px;
+}
+/**LOGIN/SIGNUP**/
+.form-input {
+    padding: 5px;
+    border: 5px;
+    margin: 5px;
+    border: solid;
+    border-radius: 5px;
 }

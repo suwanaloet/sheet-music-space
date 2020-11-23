@@ -5,7 +5,7 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-        me: async (parent, arges, context) => {
+        me: async (parent, args, context) => {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
@@ -41,8 +41,8 @@ const resolvers = {
 
             return { token, user };
         },
-        login: async (parent, { email, password }) => {
-            const user = await User.findOne({ email });
+        login: async (parent, { username, password }) => {
+            const user = await User.findOne({ username });
 
             if (!user) {
                 throw new AuthenticationError('Please re-check credentials!');
@@ -51,7 +51,7 @@ const resolvers = {
             const correctPw = await user.isCorrectPassword(password);
 
             if (!correctPw) {
-                throw new AuthenticationError('Please re-check credentials!');
+                throw new AuthenticationError('Wrong password!');
             }
 
             const token = signToken(user);
@@ -59,11 +59,11 @@ const resolvers = {
         },
         addPost: async (parent, args, context) => {
             if (context.user) {
-                const thought = await Post.create({ ...args, username: context.user.username });
+                const post = await Post.create({ ...args, username: context.user.username });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },
-                    { $push: { posts: thought._id } },
+                    { $push: { posts: post._id } },
                     { new: true }
                 );
 
@@ -75,7 +75,7 @@ const resolvers = {
         addComment: async (parent, { postId, commentText }, context) => {
             if (context.user) {
                 const updatedPost = await Post.findOneAndUpdate(
-                    { _id: thoughtId },
+                    { _id: postId },
                     { $push: { comments: { commentText, username: context.user.username } } },
                     { new: true, runValidators: true }
                 );
