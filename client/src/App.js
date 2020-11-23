@@ -21,8 +21,10 @@ import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+//DEPLOY INFO
+//https://mysterious-hollows-86719.herokuapp.com/ | https://git.heroku.com/mysterious-hollows-86719.git
+
 const client = new ApolloClient({
-  //recieve token from localstorage
   request: operation => {
     const token = localStorage.getItem('id_token');
 
