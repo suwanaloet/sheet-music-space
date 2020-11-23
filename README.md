@@ -1,5 +1,22 @@
 # sheet-music-space
 
+## Project Features!
+This website was created to give music enthusiasts a place to save the sheet music they have found on the open web, to easily find again later.
+ - Landing page
+ - Homepage displaying all user posts in chronological order
+ - Login, signup, and authentication features. 
+ - Post and comment functionality
+ - Follow the external links to get your sheet music
+ - Dynamic logged-in/ logged-out views
+ - Mobile friendly/ Mobile-first development
+ - React frontend
+ - GraphQL/Apollo backend
+
+## Looking Ahead:
+ - Getting more users to start populating the website
+ - Work on search function to accomodate these incoming posts
+ - A delete/admin function to self-edit or audit other user's posts (if the website is abused)
+
 ## Project Requirements
 
    - Performant JavaScript
@@ -40,3 +57,12 @@
     * Have a clean repository that meets quality coding standards (file structure, naming conventions, best practices for class and id naming conventions, indentation, high-quality comments, etc.).
 
     * Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
+
+# Installation
+For private/local use, or to branch off of this codebase on your own, either clone or download the repository to your local computer. Run "npm install" from the root folder (one level above the client and server folders) and the script will install the dependencies for the root, client, and serverside folders. Then run "npm start" from the root folder to start up the application! Heroku deploy friendly ready to go.
+
+# Contributing
+Sean Suwanaloet
+
+# Questions? Want more features?
+Contact me at suwanaloet@wisc.edu
